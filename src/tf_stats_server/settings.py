@@ -27,7 +27,7 @@ SECRET_KEY = '($%pgf00kd#)s7ezkp9_&w_50)nwq$p5a6=9g+o^-7a*_eb)ud'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 INSTALLED_APPS = [
@@ -126,7 +126,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-REQUEST_LOGGING_DATA_LOG_LEVEL = logging.DEBUG
+REQUEST_LOGGING_DATA_LOG_LEVEL = logging.INFO
 
 LOGGING = {
     'version': 1,
@@ -138,7 +138,7 @@ LOGGING = {
     },
     'handlers': {
         'file': {
-            'level': 'DEBUG',
+            'level': 'INFO',
             'class': 'logging.handlers.TimedRotatingFileHandler',
             'filename': 'tf_stats_server.log',
             'when': 'midnight',
@@ -149,7 +149,7 @@ LOGGING = {
     'loggers': {
         'django.request': {
             'handlers': ['file'],
-            'level': 'DEBUG',
+            'level': 'INFO',
             'propagate': True,
         },
     }

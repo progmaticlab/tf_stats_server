@@ -1,0 +1,9 @@
+FROM python:3.6
+ENV PYTHONUNBUFFERED 1
+COPY . /opt/tf_stats_server/
+WORKDIR /opt/tf_stats_server/
+RUN pip install -r requirements.txt 
+WORKDIR /opt/tf_stats_server/src
+RUN python manage.py migrate
+RUN python manage.py makemigrations rest_api
+RUN python manage.py migrate
