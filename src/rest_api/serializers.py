@@ -6,7 +6,7 @@ from rest_api.models import Stats
 class StatsSerializer(ModelSerializer):
     class Meta:
         model = Stats
-        fields = ('host_id',
+        fields = ('tf_id',
                   'vmachines',
                   'vnetworks',
                   'vrouters',
