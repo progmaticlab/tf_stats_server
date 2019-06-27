@@ -22,7 +22,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '($%pgf00kd#)s7ezkp9_&w_50)nwq$p5a6=9g+o^-7a*_eb)ud'
+SECRET_KEY = os.environ['STATS_APP_SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -78,12 +78,10 @@ WSGI_APPLICATION = 'tf_stats_server.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'tf_stats',
-        'USER': 'tf_stats_user',
-        'PASSWORD': 'yuegfi6ijjdl88lkj',
-        'HOST': '127.0.0.1',
-        'PORT': '5432',
+        'ENGINE': os.environ['STATS_DB_ENGINE'],
+        'NAME': os.environ['STATS_DB'],
+        'USER': os.environ['STATS_DB_USER'],
+        'PASSWORD': os.environ['STATS_DB_PASSW']
     }
 }
 
