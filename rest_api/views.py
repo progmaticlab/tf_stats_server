@@ -7,7 +7,7 @@ from rest_api.serializers import StatsSerializer
 
 @api_view(["GET"])
 def api_version(request):
-    api_version = {"api_version": "0.1"}
+    api_version = {"api_version": "0.2"}
     return JsonResponse(api_version, status=200)
 
 

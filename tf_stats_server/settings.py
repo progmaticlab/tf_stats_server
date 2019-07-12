@@ -139,7 +139,7 @@ LOGGING = {
         'file': {
             'level': 'INFO',
             'class': 'logging.handlers.TimedRotatingFileHandler',
-            'filename': 'tf_stats_server.log',
+            'filename': '/var/log/tf/tf_stats_server.log',
             'when': 'midnight',
             'backupCount': 35,
             'formatter': 'request_format',
